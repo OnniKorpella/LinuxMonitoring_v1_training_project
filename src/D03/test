@@ -1,0 +1,49 @@
+#!/bin/bash
+
+col_1='\033[0;37m';  # white
+col_2='\033[0;31m';  # red
+col_3='\033[0;32m';  # green
+col_4='\033[0;34m';  # blue
+col_5='\033[0;35m';  # purple
+col_6='\033[0;30m';  # black
+
+b_col_1='\033[47m';  # white
+b_col_2='\033[41m';  # red
+b_col_3='\033[42m';  # green
+b_col_4='\033[44m';  # blue
+b_col_5='\033[45m';  # purple
+b_col_6='\033[40m';  # black
+RESET='\033[0m';         # Reset color
+
+echo -e "${col_6}${b_col_4}----------------------->>>> меняем 1 и 3 параметр <<<<---------------------------${RESET}"
+for ((i = 1; i < 7; i++)){
+    printf "${col_3} bash main.sh ${col_2}$i 6  $i 6 ${RESET}\n";
+    bash 7.sh $i 6 $i 6;
+}
+
+echo -e "${col_6}${b_col_4}----------------------->>>> меняем 2 и 4 параметр <<<<---------------------------${RESET}"
+for ((i = 1; i < 7; i++)){
+    printf "${col_3} bash main.sh ${col_2} 6 $i 6 $i ${RESET}\n";
+    bash 7.sh 3 $i 1 $i;
+}
+echo -e "${col_6}${b_col_4}----------------------->>>> меняем 1 параметр <<<<---------------------------${RESET}"
+for ((i = 1; i < 7; i++)){
+    printf "${col_3} bash main.sh ${col_2}$i 6 2 6${RESET}\n" ;
+    bash 7.sh $i 6 2 6;
+}
+
+echo -e "${col_6}${b_col_4}----------------------->>>> меняем 2 параметр <<<<---------------------------${RESET}"
+for ((i = 1; i < 7; i++)){
+    printf "${col_3} bash main.sh ${col_2} 2 $i 2 6 ${RESET}\n ";
+    bash 7.sh 2 $i 4 5;
+}
+echo -e "${col_6}${b_col_4}----------------------->>>> меняем 3 параметр <<<<---------------------------${RESET}"
+for ((i = 1; i < 7; i++)){
+    printf "${col_3} bash main.sh ${col_2}6 3 $i 6${RESET}\n";
+    bash 7.sh 1 6 $i 4;
+}
+echo -e "${col_6}${b_col_4}----------------------->>>> меняем 4 параметр <<<<---------------------------${RESET}"
+for ((i = 1; i < 7; i++)){
+    printf "${col_3} bash main.sh ${col_2}2 6 2 $i${RESET}\n ";
+    bash 7.sh 3 6 6 $i;
+}
